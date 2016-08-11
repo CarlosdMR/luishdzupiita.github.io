@@ -1,2 +1,2 @@
 # luishdzupiita.github.io
-Cualquier texto que quieran
+Curso de realidad virtual en UPIITA-IPN
