@@ -18,7 +18,7 @@ var cuadroFigura = new THREE.ExtrudeGeometry(cuadro, {amount: 10});
 var material = new THREE.MeshNormalMaterial();
 
 var malla2 = new THREE.Mesh(cuadroFigura,material);
-malla2.rotateX(Math.PI/2);
+//malla2.rotateX(Math.PI/2);
 
 var forma = new THREE.LatheGeometry(puntos);
 var malla = new THREE.Mesh(forma,material);
