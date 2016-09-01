@@ -35,8 +35,8 @@ var cuadroFigura3 = new THREE.ExtrudeGeometry(cuadro3, {amount: 10});
 var material = new THREE.MeshNormalMaterial();
 
 var mallac = new THREE.Mesh(cuadroFigura,material);
-var mallac2 = new THREE.Mesh(cuadroFigura,material);
-var mallac3 = new THREE.Mesh(cuadroFigura,material);
+var mallac2 = new THREE.Mesh(cuadroFigura2,material);
+var mallac3 = new THREE.Mesh(cuadroFigura3,material);
 
 //malla2.rotateX(Math.PI/2);
 
