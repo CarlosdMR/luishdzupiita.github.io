@@ -47,19 +47,20 @@ var malla = new THREE.Mesh(forma,material);
 var formaIntermedia1 = new THREE.Geometry();
 formaIntermedia1.merge(mallac.geometry, mallac.matrix);
 formaIntermedia1.merge(malla.geometry, malla.matrix);
+var mallaFinal1 = new THREE.Mesh(formaIntermedia1, material);
 
 var formaIntermedia2 = new THREE.Geometry();
 formaIntermedia2.merge(mallac2.geometry, mallac2.matrix);
 formaIntermedia2.merge(formaIntermedia1.geometry, formaIntermedia1.matrix);
+var mallaFinal2 = new THREE.Mesh(formaIntermedia2, material);
 
 var formaIntermedia3 = new THREE.Geometry();
 formaIntermedia3.merge(mallac3.geometry, mallac3.matrix);
 formaIntermedia3.merge(formaIntermedia2.geometry, formaIntermedia2.matrix);
-
-var mallaFinal = new THREE.Mesh(formaIntermedia1, material);
+var mallaFinal3 = new THREE.Mesh(formaIntermedia3, material);
 
 var scene = new THREE.Scene();
-scene.add(mallaFinal);
+scene.add(mallaFinal3);
 //scene.add(mallac);
 //scene.add(mallac2);
 //scene.add(mallac3);
