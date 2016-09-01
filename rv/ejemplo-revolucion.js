@@ -38,7 +38,6 @@ var mallac = new THREE.Mesh(cuadroFigura,material);
 var mallac2 = new THREE.Mesh(cuadroFigura2,material);
 var mallac3 = new THREE.Mesh(cuadroFigura3,material);
 
-mallac3.translateZ(100);
 //malla2.rotateX(Math.PI/2);
 
 var forma = new THREE.LatheGeometry(puntos);
