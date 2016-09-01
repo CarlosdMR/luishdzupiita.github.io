@@ -56,7 +56,7 @@ var formaIntermedia3 = new THREE.Geometry();
 formaIntermedia3.merge(mallac3.geometry, mallac3.matrix);
 formaIntermedia3.merge(formaIntermedia2.geometry, formaIntermedia2.matrix);
 
-var mallaFinal = new THREE.Mesh(formaIntermedia3, material);
+var mallaFinal = new THREE.Mesh(formaIntermedia1, material);
 
 var scene = new THREE.Scene();
 scene.add(mallaFinal);
