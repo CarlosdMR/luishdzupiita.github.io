@@ -1,18 +1,18 @@
 var figura = new THREE.Shape();
 
-figura.moveTo(0,3);
+figura.moveTo(0,4);
 figura.lineTo(1,2);
 figura.lineTo(3,2);
 figura.lineTo(2,0);
 figura.lineTo(3,-2);
 figura.lineTo(1,-2);
-figura.lineTo(0,-3);
+figura.lineTo(0,-4);
 figura.lineTo(-1,-2);
 figura.lineTo(-3,-2);
 figura.lineTo(-2,0);
 figura.lineTo(-3,2);
 figura.lineTo(-1,2);
-figura.lineTo(0,3);
+figura.lineTo(0,4);
 
 var forma = new THREE.ShapeGeometry(figura);
 var malla = new THREE.Mesh(forma);
