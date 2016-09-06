@@ -21,8 +21,11 @@ var esfera2 = new THREE.Mesh(new THREE.SphereGeometry(1),new THREE.MeshNormalMat
 esfera2.position.x = -5;
 esfera2.position.z = -10;
 
+var light = new THREE.PointLight( 0xff0000, 1, 100 );
+light.position.set( 0, 0, 10 );
+
 var escena = new THREE.Scene();
-escena.add(esfera1,esfera2,cubo);
+escena.add(esfera1,esfera2,cubo,light);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
