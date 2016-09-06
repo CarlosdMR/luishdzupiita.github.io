@@ -24,8 +24,20 @@ esfera2.position.z = -10;
 var light = new THREE.PointLight( 0xff0000, 1, 100 );
 light.position.set( 0, 0, 10 );
 
+var spotLight = new THREE.SpotLight( 0xffffff );
+spotLight.position.set( 5, 0, 5);
+
+spotLight.castShadow = true;
+
+spotLight.shadow.mapSize.width = 1024;
+spotLight.shadow.mapSize.height = 1024;
+
+spotLight.shadow.camera.near = 500;
+spotLight.shadow.camera.far = 4000;
+spotLight.shadow.camera.fov = 30;
+
 var escena = new THREE.Scene();
-escena.add(esfera1,esfera2,cubo,light);
+escena.add(esfera1,esfera2,cubo,light,spotLight);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
