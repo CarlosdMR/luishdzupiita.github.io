@@ -35,7 +35,8 @@ for (i = 0; i < 8; i++) {
 }
 // var cuboS = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
 //////////////////////////////////////////////////////////////////
-var camara = new THREE.PerspectiveCamera();
+//var camara = new THREE.PerspectiveCamera();
+var camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 1000 );
 camara.position.z = 50;
 
 var escena = new THREE.Scene();
