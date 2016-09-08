@@ -48,8 +48,8 @@ for (i = 0; i < 8; i++) {
 
 //////////////////////////////////////////////////////////////////
 var escena = new THREE.Scene();
-for (cube in cuadros) {
-escena.add(cube);
+for (i = 0; i < 64; i++) {
+escena.add(cube[i]);
 }
 
 var renderizador = new THREE.WebGLRenderer();
