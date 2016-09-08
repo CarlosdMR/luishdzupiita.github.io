@@ -18,14 +18,14 @@ var cubeSize = 10;
 var intialMaterial = colorGris;
 for (i = 0; i < 8; i++) {
   for (j = 0; j < 8; j++) {
-    var material = colorGris;
+    var material = materialGris;
     if (isEven(i)) {
       if (isOdd(j)) {
-        material = colorBlanco;
+        material = materialBlanco;
       } 
     } else {
       if (isEven(j)) {
-        material = colorBlanco;
+        material = materialBlanco;
       } 
     }
     var cubo = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
@@ -34,7 +34,7 @@ for (i = 0; i < 8; i++) {
     cuadros.push(cubo);
   }
 }
-
+// var cuboS = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
 //////////////////////////////////////////////////////////////////
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 50;
