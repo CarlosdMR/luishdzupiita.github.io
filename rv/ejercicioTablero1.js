@@ -35,9 +35,9 @@ for (i = 0; i < 8; i++) {
 }
 // var cuboS = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
 //////////////////////////////////////////////////////////////////
-//var camara = new THREE.PerspectiveCamera();
-var camara = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
-camara.position.z = 50;
+var camara = new THREE.PerspectiveCamera();
+//var camara = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
+camara.position.z = 100;
 
 var escena = new THREE.Scene();
 for (i = 0; i < 64; i++) {
