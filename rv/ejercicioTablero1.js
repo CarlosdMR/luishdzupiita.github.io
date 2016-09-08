@@ -27,7 +27,8 @@ for (i = 0; i < 8; i++) {
         material = materialBlanco;
       } 
     }
-    var cubo = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
+    var geometry = new THREE.BoxGeometry( 10, 10, 10 );
+    var cubo = new THREE.Mesh(geometry),material);
     cubo.position.x = j*cubeSize;
     cubo.position.y = i*cubeSize; 
     cuadros.push(cubo);
