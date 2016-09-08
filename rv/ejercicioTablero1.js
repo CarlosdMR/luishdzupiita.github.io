@@ -34,6 +34,10 @@ for (i = 0; i < 8; i++) {
     cuadros.push(cubo);
   }
 }
+// Join cuadros
+for (i = 1; i < 64; i++) {
+cuadros[0].add(cuadros[i]);
+}
 // var cuboS = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
 //////////////////////////////////////////////////////////////////
 var camara = new THREE.PerspectiveCamera();
