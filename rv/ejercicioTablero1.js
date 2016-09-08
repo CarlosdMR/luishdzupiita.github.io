@@ -15,7 +15,6 @@ function isOdd(n) {
 
 var cuadros = [];
 var cubeSize = 10;
-var intialMaterial = colorGris;
 for (i = 0; i < 8; i++) {
   for (j = 0; j < 8; j++) {
     var material = materialGris;
