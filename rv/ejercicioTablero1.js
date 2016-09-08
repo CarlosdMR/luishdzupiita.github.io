@@ -29,7 +29,7 @@ for (i = 0; i < 8; i++) {
     }
     var cubo = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
     cubo.position.x = j*cubeSize;
-    cubo.position.y = i*cubeSize*2; 
+    cubo.position.y = i*cubeSize; 
     cuadros.push(cubo);
   }
 }
