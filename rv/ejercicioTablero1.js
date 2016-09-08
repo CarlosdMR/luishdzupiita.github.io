@@ -38,8 +38,8 @@ for (i = 0; i < 8; i++) {
 //////////////////////////////////////////////////////////////////
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 100;
-camara.position.x = 52;
-camara.position.y = -50;
+camara.position.x = 55;
+camara.position.y = -55;
 camara.lookAt(new THREE.Vector3(35,35,11))
 
 var escena = new THREE.Scene();
