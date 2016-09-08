@@ -1,14 +1,3 @@
-var campoVision = 45;
-var relacionAspecto = window.innerWidth / window.innerHeight;
-var planoCercano = 1;
-var planoLejano = 1000;
-
-
-var camara = new THREE.PerspectiveCamera(campoVision, relacionAspecto, planoCercano, planoLejano);
-//camara.position.x = 100;
-//camara.position.y = 100;
-camara.position.z = 100;
-
 var colorGris = new THREE.Color("rgb(30, 30, 30)");
 var materialGris = new THREE.MeshBasicMaterial();
 materialGris.color = colorGris;
@@ -47,6 +36,9 @@ for (i = 0; i < 8; i++) {
 }
 
 //////////////////////////////////////////////////////////////////
+var camara = new THREE.PerspectiveCamera();
+camara.position.z = 50;
+
 var escena = new THREE.Scene();
 for (i = 0; i < 64; i++) {
 escena.add(cuadros[i]);
