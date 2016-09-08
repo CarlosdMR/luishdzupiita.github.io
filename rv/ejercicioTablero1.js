@@ -48,7 +48,7 @@ for (i = 0; i < 8; i++) {
 
 //////////////////////////////////////////////////////////////////
 var escena = new THREE.Scene();
-for cube in cuadros {
+for (cube in cuadros) {
 escena.add(cube);
 }
 
