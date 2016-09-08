@@ -49,7 +49,7 @@ for (i = 0; i < 8; i++) {
 //////////////////////////////////////////////////////////////////
 var escena = new THREE.Scene();
 for (i = 0; i < 64; i++) {
-escena.add(cube[i]);
+escena.add(cuadros[i]);
 }
 
 var renderizador = new THREE.WebGLRenderer();
