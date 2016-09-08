@@ -37,7 +37,7 @@ for (i = 0; i < 8; i++) {
 //////////////////////////////////////////////////////////////////
 //var camara = new THREE.PerspectiveCamera();
 var camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
-camara.position.z = 50;
+//camara.position.z = 50;
 
 var escena = new THREE.Scene();
 for (i = 0; i < 64; i++) {
