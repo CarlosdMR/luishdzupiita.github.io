@@ -55,10 +55,10 @@ escena.add(cuadros[i]);
 var materialBorde = new THREE.MeshBasicMaterial();
 materialBorde.color = new THREE.Color("rgb(200, 130, 60)");
 
-var geometryLado1 = new THREE.BoxGeometry( 8, 100, 10 );
-var geometryLado2 = new THREE.BoxGeometry( 100, 8, 10 );
-var geometryLado3 = new THREE.BoxGeometry( 100, 8, 10 );
-var geometryLado4 = new THREE.BoxGeometry( 8, 100, 10 );
+var geometryLado1 = new THREE.BoxGeometry( 10, 100, 10 );
+var geometryLado2 = new THREE.BoxGeometry( 100, 10, 10 );
+var geometryLado3 = new THREE.BoxGeometry( 100, 10, 10 );
+var geometryLado4 = new THREE.BoxGeometry( 10, 100, 10 );
 var lado1 = new THREE.Mesh(geometryLado1,materialBorde);
 var lado2 = new THREE.Mesh(geometryLado2,materialBorde);
 var lado3 = new THREE.Mesh(geometryLado3,materialBorde);
