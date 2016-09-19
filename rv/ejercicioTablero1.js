@@ -51,6 +51,18 @@ for (i = 0; i < 64; i++) {
 escena.add(cuadros[i]);
 }
 
+var torres = [];
+
+for (i = 0; i < 4; i++) {
+   torres[i] = mallaFinal3.clone();
+   torres[i].rotateX(Math.PI/2);
+   torres[i].geometry.scale(0.2,0.2,0.2);
+   escena.add(torres[i]);
+}
+
+//torres[0].position.x
+
+
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 
