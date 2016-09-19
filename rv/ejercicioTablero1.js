@@ -56,7 +56,7 @@ var torres = [];
 for (i = 0; i < 4; i++) {
    torres[i] = mallaFinal3.clone();
    torres[i].rotateX(Math.PI/2);
-   //torres[i].geometry.scale(0.2,0.2,0.2);
+   torres[i].geometry.scale(0.3,0.3,0.3);
    escena.add(torres[i]);
 }
 
