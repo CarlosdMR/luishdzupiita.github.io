@@ -51,6 +51,24 @@ for (i = 0; i < 64; i++) {
 escena.add(cuadros[i]);
 }
 
+//Lados o bordes del tablero
+var materialBorde = new THREE.MeshBasicMaterial();
+materialBorde.color = new THREE.Color("rgb(200, 130, 60)");
+
+var geometryLado1 = new THREE.BoxGeometry( 10, 100, 10 );
+var geometryLado2 = new THREE.BoxGeometry( 100, 10, 10 );
+var geometryLado3 = new THREE.BoxGeometry( 100, 10, 10 );
+var geometryLado4 = new THREE.BoxGeometry( 10, 100, 10 );
+var lado1 = new THREE.Mesh(geometry,materialBorde);
+var lado2 = new THREE.Mesh(geometry,materialBorde);
+var lado3 = new THREE.Mesh(geometry,materialBorde);
+var lado4 = new THREE.Mesh(geometry,materialBorde);
+escena.add(lado1);
+escena.add(lado2);
+escena.add(lado3);
+escena.add(lado4);
+
+
 var torres = [];
 
 for (i = 0; i < 4; i++) {
