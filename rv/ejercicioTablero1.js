@@ -64,11 +64,11 @@ for (i = 0; i < 4; i++) {
 torres[0].position.y = -2;
 torres[0].position.x = 2;
 torres[1].position.y = -2;
-torres[1].position.x = 82;
-torres[2].position.y = 78;
+torres[1].position.x = 69;
+torres[2].position.y = 64;
 torres[2].position.x = 2;
-torres[3].position.y = 78;
-torres[3].position.x = 82;
+torres[3].position.y = 64;
+torres[3].position.x = 69;
 
 
 var renderizador = new THREE.WebGLRenderer();
