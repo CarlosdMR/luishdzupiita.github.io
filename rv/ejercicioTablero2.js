@@ -102,14 +102,17 @@ torres[2].position.x = 2;
 torres[3].position.y = 64;
 torres[3].position.x = 69;
 
-var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1,100);
-luzPuntual1.position.set(30,-15,70);
-var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1,100);
-luzPuntual2.position.set(-10,95,70);
-var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1,100);
-luzPuntual3.position.set(90,75,70);
+var luzPuntual1 = new THREE.PointLight(0x00FFFF,1,100);
+luzPuntual1.position.set(30,-15,65);
+var luzPuntual2 = new THREE.PointLight(0xFF00FF,1,100);
+luzPuntual2.position.set(-10,95,65);
+var luzPuntual3 = new THREE.PointLight(0xFFFF00,1,100);
+luzPuntual3.position.set(90,75,65);
 
-escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
+var iluminacionAmbiental = new THREE.AmbientLight(0x444444);
+
+
+escena.add(luzPuntual1, luzPuntual2, luzPuntual3, iluminacionAmbiental);
 
 
 var renderizador = new THREE.WebGLRenderer();
