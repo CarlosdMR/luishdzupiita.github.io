@@ -32,7 +32,7 @@ var cuadroFigura = new THREE.ExtrudeGeometry(cuadro, {amount: 10});
 var cuadroFigura2 = new THREE.ExtrudeGeometry(cuadro2, {amount: 10});
 var cuadroFigura3 = new THREE.ExtrudeGeometry(cuadro3, {amount: 10});
 
-var material = new THREE.MeshLambertMaterial({color:0xFFFFFF});
+var material = new THREE.MeshNormalMaterial();
 
 var mallac = new THREE.Mesh(cuadroFigura,material);
 var mallac2 = new THREE.Mesh(cuadroFigura2,material);
