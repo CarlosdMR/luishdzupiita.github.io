@@ -102,13 +102,13 @@ torres[2].position.x = 2;
 torres[3].position.y = 64;
 torres[3].position.x = 69;
 
-torre[2].material.color = colorGris;
-torre[3].material.color = colorGris;
+torres[2].material.color = colorGris;
+torres[3].material.color = colorGris;
 
-torre[0].material.opacity = 0.25;
-torre[1].material.opacity = 0.5;
-torre[2].material.opacity = 0.75;
-torre[3].material.opacity = 1.0;
+torres[0].material.opacity = 0.25;
+torres[1].material.opacity = 0.5;
+torres[2].material.opacity = 0.75;
+torres[3].material.opacity = 1.0;
 
 var luzPuntual1 = new THREE.PointLight(0x00FFFF,1,100);
 luzPuntual1.position.set(30,-15,65);
