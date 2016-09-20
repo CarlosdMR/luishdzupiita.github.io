@@ -103,11 +103,11 @@ torres[3].position.y = 64;
 torres[3].position.x = 69;
 
 var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1,100);
-luzPuntual1.position.set(30,-15,30);
+luzPuntual1.position.set(30,-15,70);
 var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1,100);
-luzPuntual2.position.set(-10,75,30);
+luzPuntual2.position.set(-10,95,70);
 var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1,100);
-luzPuntual3.position.set(90,75,30);
+luzPuntual3.position.set(90,75,70);
 
 escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
 
