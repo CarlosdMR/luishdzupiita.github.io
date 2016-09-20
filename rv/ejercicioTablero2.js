@@ -48,7 +48,7 @@ camara.lookAt(new THREE.Vector3(35,35,11))
 
 var escena = new THREE.Scene();
 for (i = 0; i < 64; i++) {
-cuadro[i].receiveShadow=true;
+cuadros[i].receiveShadow=true;
 escena.add(cuadros[i]);
 }
 
