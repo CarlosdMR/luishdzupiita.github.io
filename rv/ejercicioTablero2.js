@@ -102,8 +102,8 @@ torres[2].position.x = 2;
 torres[3].position.y = 64;
 torres[3].position.x = 69;
 
-torres[2].material.color = colorGris;
-torres[3].material.color = colorGris;
+torres[2].material = new THREE.MeshLambertMaterial({color:colorGris});
+torres[3].material = new THREE.MeshLambertMaterial({color:colorGris});
 
 torres[0].material.opacity = 0.25;
 torres[1].material.opacity = 0.5;
