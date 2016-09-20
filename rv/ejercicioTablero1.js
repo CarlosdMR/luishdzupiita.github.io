@@ -96,6 +96,12 @@ torres[2].position.x = 2;
 torres[3].position.y = 64;
 torres[3].position.x = 69;
 
+torres[2].material = new THREE.MeshLambertMaterial({color:colorGris});
+torres[3].material = new THREE.MeshLambertMaterial({color:colorGris});
+
+var iluminacionAmbiental = new THREE.AmbientLight(0x888888);
+escena.add(iluminacionAmbiental);
+
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
