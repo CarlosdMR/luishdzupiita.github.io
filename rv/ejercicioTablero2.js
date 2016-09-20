@@ -102,6 +102,14 @@ torres[2].position.x = 2;
 torres[3].position.y = 64;
 torres[3].position.x = 69;
 
+torre[2].material.color = colorGris;
+torre[3].material.color = colorGris;
+
+torre[0].material.opacity = 0.25;
+torre[1].material.opacity = 0.5;
+torre[2].material.opacity = 0.75;
+torre[3].material.opacity = 1.0;
+
 var luzPuntual1 = new THREE.PointLight(0x00FFFF,1,100);
 luzPuntual1.position.set(30,-15,65);
 var luzPuntual2 = new THREE.PointLight(0xFF00FF,1,100);
@@ -109,7 +117,7 @@ luzPuntual2.position.set(-10,95,65);
 var luzPuntual3 = new THREE.PointLight(0xFFFF00,1,100);
 luzPuntual3.position.set(90,75,65);
 
-var iluminacionAmbiental = new THREE.AmbientLight(0x444444);
+var iluminacionAmbiental = new THREE.AmbientLight(0x777777);
 
 
 escena.add(luzPuntual1, luzPuntual2, luzPuntual3, iluminacionAmbiental);
