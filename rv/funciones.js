@@ -20,7 +20,7 @@ document.body.appendChild(renderizador.domElement);
    requestAnimationFrame(loop);
    renderizador.render(escena,camara);
    malla.rotateY(0.01);
-   malla.position.x = malla.position.x + 0.1;
+   malla.position.x = malla.position.x + 0.01;
    // if (direccion === 1) {
    //  malla.position.x = malla.position.x + 0.1;
    //  if (Math.abs(malla.position.x) > tresholdR) {
