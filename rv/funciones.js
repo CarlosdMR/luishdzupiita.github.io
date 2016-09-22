@@ -34,7 +34,7 @@ document.body.appendChild(renderizador.domElement);
  }
  
  var direccion = 1;
- var tresholdL = 40;
- var tresholdR = -40;
+ var tresholdL = 400;
+ var tresholdR = -400;
  init(1);
  loop();
