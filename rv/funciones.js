@@ -1,5 +1,4 @@
 var escena, camara, renderizador;
-init(1);
 
 function init(p) {
 
@@ -15,6 +14,11 @@ camara.position.z = 3*p;
 renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(100,700);
 document.body.appendChild(renderizador.domElement);
-renderizador.render(escena,camara);
 
 }
+ var main = function(p) {
+   p(1);
+   renderizador.render(escena,camara);
+ }
+ 
+ main(init);
