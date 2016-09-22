@@ -24,13 +24,11 @@ document.body.appendChild(renderizador.domElement);
     malla.position.x = malla.position.x + 0.01;
     if (malla.position.x > tresholdR) {
     direccion = 2;
-    alert("right")
     }
    } else {
     malla.position.x = malla.position.x - 0.01;
     if (malla.position.x < tresholdL) {
     direccion = 1;
-    alert("left")
     }
    }
  }
