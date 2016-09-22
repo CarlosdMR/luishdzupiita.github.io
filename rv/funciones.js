@@ -20,19 +20,20 @@ document.body.appendChild(renderizador.domElement);
    requestAnimationFrame(loop);
    renderizador.render(escena,camara);
    malla.rotateY(0.01);
-   if (direccion === 1) {
-    malla.position.x = malla.position.x + 0.1;
-    if (Math.abs(malla.position.x) > tresholdR) {
-    direccion = 2;
-    alert("right")
-    }
-   } else {
-    malla.position.x = malla.position.x - 0.1;
-    if (Math.abs(malla.position.x) < tresholdL) {
-    direccion = 1;
-    alert("left")
-    }
-   }
+   malla.position.x = malla.position.x + 0.1;
+   // if (direccion === 1) {
+   //  malla.position.x = malla.position.x + 0.1;
+   //  if (Math.abs(malla.position.x) > tresholdR) {
+   //  direccion = 2;
+   //  alert("right")
+   //  }
+   // } else {
+   //  malla.position.x = malla.position.x - 0.1;
+   //  if (Math.abs(malla.position.x) < tresholdL) {
+   //  direccion = 1;
+   //  alert("left")
+   //  }
+   // }
  }
  
  var direccion = 1;
