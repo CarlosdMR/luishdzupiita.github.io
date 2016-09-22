@@ -22,13 +22,13 @@ document.body.appendChild(renderizador.domElement);
    malla.rotateY(0.01);
    if (direccion === 1) {
     malla.position.x = malla.position.x + 0.1;
-    if (malla.position.x > tresholdR) {
+    if (Math.abs(malla.position.x > tresholdR)) {
     direccion = 2;
     alert("right")
     }
    } else {
     malla.position.x = malla.position.x - 0.1;
-    if (malla.position.x < tresholdL) {
+    if (Math.abs(malla.position.x < tresholdL)) {
     direccion = 1;
     alert("left")
     }
@@ -36,7 +36,7 @@ document.body.appendChild(renderizador.domElement);
  }
  
  var direccion = 1;
- var tresholdL = 20;
- var tresholdR = -20;
+ var tresholdL = 5;
+ var tresholdR = -5;
  init(1);
  loop();
