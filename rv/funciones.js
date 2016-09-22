@@ -17,7 +17,7 @@ document.body.appendChild(renderizador.domElement);
 
 }
  var loop = function() {
-   requestAnimatioFrame(loop);
+   requestAnimationFrame(loop);
    renderizador.render(escena,camara);
    malla.rotateY(0.01);
  }
