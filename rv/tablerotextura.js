@@ -175,7 +175,7 @@ var loop = function(){
       didSetup = true;
       }
    
-   renderizador.render(TEXTURA.escena, TEXTURA.camara);
+   renderizador.render(escena, camara);
    }
 }
 loop();
