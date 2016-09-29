@@ -17,13 +17,13 @@ var cargadorWood=new THREE.TextureLoader();
 cargadorWood.load("madera.jpeg",
               fnWood);
 
-function fnBlack(texture) {
+function fnBlack(textura) {
    materialGris = new THREE.MeshBasicMaterial({map: textura});  
 }
-function fnWhite(texture) {
+function fnWhite(textura) {
    materialBlanco = new THREE.MeshBasicMaterial({map: textura});  
 }
-function fnWood(texture) {
+function fnWood(textura) {
    materialBorde = new THREE.MeshBasicMaterial({map: textura});  
 }
 
