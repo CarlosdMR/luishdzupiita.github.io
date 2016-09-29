@@ -10,6 +10,19 @@ var mat1 = false;
 var mat2 = false;
 var mat3 = false;
 
+var fnBlack = function(textura) {
+   materialGris = new THREE.MeshBasicMaterial({map: textura});  
+   mat1 = true;
+}
+var fnWhite = function(textura) {
+   materialBlanco = new THREE.MeshBasicMaterial({map: textura});  
+   mat2 = true;
+}
+var fnWood = function(textura) {
+   materialBorde = new THREE.MeshBasicMaterial({map: textura});  
+   mat3 = true;
+}
+
 var cargadorBlack=new THREE.TextureLoader();
 cargadorBlack.load("marmolNegro.jpeg",
               fnBlack);
@@ -20,18 +33,6 @@ var cargadorWood=new THREE.TextureLoader();
 cargadorWood.load("madera.jpeg",
               fnWood);
 
-function fnBlack(textura) {
-   materialGris = new THREE.MeshBasicMaterial({map: textura});  
-   mat1 = true;
-}
-function fnWhite(textura) {
-   materialBlanco = new THREE.MeshBasicMaterial({map: textura});  
-   mat2 = true;
-}
-function fnWood(textura) {
-   materialBorde = new THREE.MeshBasicMaterial({map: textura});  
-   mat3 = true;
-}
 
 function isEven(n) {
    return n % 2 == 0;
