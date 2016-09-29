@@ -6,6 +6,9 @@ var materialBlanco = new THREE.MeshLambertMaterial({color: colorBlanco});
 //materialBlanco.color = colorBlanco;
 var colorBorde = new THREE.Color("rgb(200, 130, 60)");
 var materialBorde = new THREE.MeshLambertMaterial({color: colorBorde});
+var mat1 = false;
+var mat2 = false;
+var mat3 = false;
 
 var cargadorBlack=new THREE.TextureLoader();
 cargadorBlack.load("marmolNegro.jpeg",
@@ -19,12 +22,15 @@ cargadorWood.load("madera.jpeg",
 
 function fnBlack(textura) {
    materialGris = new THREE.MeshBasicMaterial({map: textura});  
+   mat1 = true;
 }
 function fnWhite(textura) {
    materialBlanco = new THREE.MeshBasicMaterial({map: textura});  
+   mat2 = true;
 }
 function fnWood(textura) {
    materialBorde = new THREE.MeshBasicMaterial({map: textura});  
+   mat3 = true;
 }
 
 function isEven(n) {
@@ -153,4 +159,13 @@ luzPuntual2.castShadow=true;
 luzPuntual3.castShadow=true;
 
 document.body.appendChild(renderizador.domElement);
-renderizador.render(escena,camara);
+
+function loop(){
+   requestAnimationFrame(loop);
+   if(mat1 && mat2 && mat3){
+     
+   
+   renderizador.render(TEXTURA.escena, TEXTURA.camara);
+   }
+}
+
