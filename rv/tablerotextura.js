@@ -9,6 +9,11 @@ var materialBorde = new THREE.MeshLambertMaterial({color: colorBorde});
 var mat1 = false;
 var mat2 = false;
 var mat3 = false;
+var cuadros = [];
+var torres = [];
+var camara;
+var escena;
+var renderizador;
 
 var fnBlack = function(textura) {
    materialGris = new THREE.MeshBasicMaterial({map: textura});  
@@ -43,7 +48,6 @@ function isOdd(n) {
 }
 
 var setup = function() {
-var cuadros = [];
 var cubeSize = 10;
 for (i = 0; i < 8; i++) {
   for (j = 0; j < 8; j++) {
@@ -70,13 +74,13 @@ cuadros[0].add(cuadros[i]);
 }
 // var cuboS = new THREE.Mesh(new THREE.BoxGeometry(cubeSize,cubeSize,cubeSize),material);
 //////////////////////////////////////////////////////////////////
-var camara = new THREE.PerspectiveCamera();
+camara = new THREE.PerspectiveCamera();
 camara.position.z = 100;
 camara.position.x = 65;
 camara.position.y = -70;
 camara.lookAt(new THREE.Vector3(35,35,11))
 
-var escena = new THREE.Scene();
+escena = new THREE.Scene();
 for (i = 0; i < 64; i++) {
 cuadros[i].receiveShadow=true;
 escena.add(cuadros[i]);
@@ -110,8 +114,6 @@ escena.add(lado2);
 escena.add(lado3);
 escena.add(lado4);
 
-
-var torres = [];
 
 for (i = 0; i < 4; i++) {
    torres[i] = mallaFinal3.clone();
@@ -152,7 +154,7 @@ var iluminacionAmbiental = new THREE.AmbientLight(0x777777);
 escena.add(luzPuntual1, luzPuntual2, luzPuntual3, iluminacionAmbiental);
 
 
-var renderizador = new THREE.WebGLRenderer();
+renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 
 renderizador.shadowMapEnabled=true;
