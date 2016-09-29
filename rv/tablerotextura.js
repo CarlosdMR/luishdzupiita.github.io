@@ -4,6 +4,28 @@ var materialGris =new THREE.MeshLambertMaterial({color: colorGris});
 var colorBlanco = new THREE.Color("rgb(255, 255, 255)");
 var materialBlanco = new THREE.MeshLambertMaterial({color: colorBlanco});
 //materialBlanco.color = colorBlanco;
+var colorBorde = new THREE.Color("rgb(200, 130, 60)");
+var materialBorde = new THREE.MeshLambertMaterial({color: colorBorde});
+
+var cargadorBlack=new THREE.TextureLoader();
+cargadorBlack.load("marmolNegro.jpeg",
+              fnBlack);
+var cargadorWhite=new THREE.TextureLoader();
+cargadorWhite.load("marmolBlanco.jpeg",
+              fnWhite);
+var cargadorWood=new THREE.TextureLoader();
+cargadorWood.load("madera.jpeg",
+              fnWood);
+
+function fnBlack(texture) {
+   materialGris = new THREE.MeshBasicMaterial({map: textura});  
+}
+function fnWhite(texture) {
+   materialBlanco = new THREE.MeshBasicMaterial({map: textura});  
+}
+function fnWood(texture) {
+   materialBorde = new THREE.MeshBasicMaterial({map: textura});  
+}
 
 function isEven(n) {
    return n % 2 == 0;
@@ -53,8 +75,7 @@ escena.add(cuadros[i]);
 }
 
 //Lados o bordes del tablero
-var colorBorde = new THREE.Color("rgb(200, 130, 60)");
-var materialBorde = new THREE.MeshLambertMaterial({color: colorBorde});
+
 
 var geometryLado1 = new THREE.BoxGeometry( 10, 100, 10 );
 var geometryLado2 = new THREE.BoxGeometry( 100, 10, 10 );
