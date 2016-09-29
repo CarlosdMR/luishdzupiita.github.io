@@ -42,6 +42,7 @@ function isOdd(n) {
    return Math.abs(n % 2) == 1;
 }
 
+var setup = function() {
 var cuadros = [];
 var cubeSize = 10;
 for (i = 0; i < 8; i++) {
@@ -160,13 +161,19 @@ luzPuntual2.castShadow=true;
 luzPuntual3.castShadow=true;
 
 document.body.appendChild(renderizador.domElement);
+}
 
-function loop(){
+var didSetup = false;
+
+var loop = function(){
    requestAnimationFrame(loop);
    if(mat1 && mat2 && mat3){
-     
+      if (didSetup == false) {
+      setup();
+      didSetup = true;
+      }
    
    renderizador.render(TEXTURA.escena, TEXTURA.camara);
    }
 }
-
+loop();
