@@ -33,3 +33,4 @@ CONSTRUCTOR.setup = function() {
   CONSTRUCTOR.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true})
   CONSTRUCTOR.renderizador.setSize(600,600);
 }
+CONSTRUCTOR.setup();
