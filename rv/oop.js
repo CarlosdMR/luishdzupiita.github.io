@@ -26,6 +26,9 @@ CONSTRUCTOR.setup = function() {
   CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
   CONSTRUCTOR.camara.position.z = 20;
   
+  var escena = new THREE.Scene();
+  escena.add(arbol1,arbol2);
+  
   var lienzo = document.getElementById("ejemplo-constructor");
   CONSTRUCTOR.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true})
   CONSTRUCTOR.renderizador.setSize(600,600);
