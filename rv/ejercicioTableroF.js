@@ -1,25 +1,4 @@
-var sampleConfig = {
-  position: 'start',
-  draggable : true,
-  dropOffBoard: 'snapback'
-};
-var board;
-function setUpBoard() {
-  var currentPosition = 'start';
-  if (board !== undefined) {
-    currentPosition = board.position();
-    board.destroy();
-  }
-  windowsWidth = $(window).width()*0.8
-  windowsWidthPx = windowsWidth.toString() + 'px'
-  $('#inner').css('width', windowsWidthPx);
-  $('#outer').css('padding', '');
-  board = new ChessBoard3('inner', sampleConfig);
-  board.position(currentPosition, false);
-}
-setUpBoard();
 
-$('#flip').on('click', board.flip);
 var moveList = [], scoreList =[];
 var game = new Chess(), 
         statusEl = $('#status'),
@@ -149,6 +128,11 @@ function createBoard(pieceSet) {
             return new ChessBoard3('board', cfg);
         
     }
+ windowsWidth = $(window).width()*0.8
+ windowsWidthPx = windowsWidth.toString() + 'px'
+ $('#board').css('width', windowsWidthPx);
 board = createBoard();
+
+$('#flip').on('click', board.flip);
 
 updateStatus();
