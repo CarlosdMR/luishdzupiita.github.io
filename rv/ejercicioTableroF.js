@@ -17,5 +17,4 @@ function setUpBoard() {
   board = new ChessBoard3('inner', sampleConfig);
   board.position(currentPosition, false);
 }
-
 setUpBoard();
