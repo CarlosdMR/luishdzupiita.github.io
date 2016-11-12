@@ -257,7 +257,7 @@
             }
             //var WHITE_MATERIAL = new THREE.MeshPhongMaterial({color: new THREE.Color(whitePieceColor)});
             var mat2 = false;
-            }
+            
             var fnWhite = function(textura) {
                var WHITE_MATERIAL = new THREE.MeshBasicMaterial({map: textura});
                WHITE_MATERIAL.specular = new THREE.Color(whitePieceSpecular);
@@ -2005,7 +2005,7 @@
             }
             init();
             return widget;
-        }
+        };
 
     // expose util functions
     window.ChessBoard3.webGLEnabled = webGLEnabled;
