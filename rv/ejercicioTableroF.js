@@ -43,12 +43,8 @@ function updateStatus() {
 
         fenEl.html(game.fen().replace(/ /g, '&nbsp;'));
         var currentPGN = game.pgn({max_width:10,newline_char:"<br>"});
-        var matches = entirePGN.lastIndexOf(currentPGN, 0) === 0;
-        if (matches) {
-            currentPGN += "<span>" + entirePGN.substring(currentPGN.length, entirePGN.length) + "</span>";
-        } else {
-            entirePGN = currentPGN;
-        }
+        
+        entirePGN = currentPGN;
         pgnEl.html(currentPGN);
         statusEl.html(status);
     };
@@ -114,9 +110,8 @@ function updateStatus() {
         }
     };
 var onSnapEnd = function() {
-        if (!game.game_over() && game.turn() !== player) {
               //  updateStatus();
-        }
+        
     };
 function createBoard(pieceSet) {
         var cfg = {
