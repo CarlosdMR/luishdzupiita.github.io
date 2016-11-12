@@ -1423,7 +1423,7 @@
 
             function addSquareHighlight(sq, color) {
                 if (!color) {
-                    color = 0xFFFF00;
+                    color = 0x00EE00;
                 }
                 var squareMesh = SCENE.getObjectById(SQUARE_MESH_IDS[sq]);
                 var highlightMesh = null;
