@@ -4,23 +4,18 @@ var sampleConfig = {
   dropOffBoard: 'snapback'
 };
 var board;
-function setUpBoard(dimensions) {
+function setUpBoard() {
   var currentPosition = 'start';
   if (board !== undefined) {
     currentPosition = board.position();
     board.destroy();
   }
-  if (dimensions >= 3) {
-    $('#inner').css('width', '100%');
-    $('#outer').css('padding', '');
-    board = new ChessBoard3('inner', sampleConfig);
-  } else {
-    $('#inner').css('width', '100%');
-    $('#outer').css('padding', '0px 75px 0px 75px');
-    board = new ChessBoard('inner', sampleConfig);
-  }
+  windowsWidth = $(window).width()
+  windowsWidthPx = windowsWidth.toString() + 'px'
+  $('#inner').css('width', windowsWidthPx);
+  $('#outer').css('padding', '');
+  board = new ChessBoard3('inner', sampleConfig);
   board.position(currentPosition, false);
 }
-$('#2D').on('click', function() {setUpBoard(2);});
-$('#3D').on('click', function() {setUpBoard(3);});
-setUpBoard(2); // start with a 2D board
+
+setUpBoard();
