@@ -54,9 +54,9 @@ function updateStatus() {
     };
 
     var onDrop = function(source, target) {
-        print source
-        print ':'
-        print target
+        console.log(source)
+        console.log(':')
+        console.log(target)
         if (board.hasOwnProperty('removeGreySquares') && typeof board.removeGreySquares === 'function') {
             board.removeGreySquares();
         }
@@ -68,8 +68,8 @@ function updateStatus() {
             promotion: $("#promotion").val()
         });
         
-        print 'move:'
-        print move    
+        console.log('move:')
+        console.log(move)    
             
         // illegal move
         if (move === null) return 'snapback';
