@@ -1,4 +1,4 @@
-var sampleConfig =
+var sampleConfig = {
   position: 'start',
   draggable : true,
   dropOffBoard: 'snapback'
