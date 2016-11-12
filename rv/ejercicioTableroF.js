@@ -1,4 +1,4 @@
-
+var cursor = 0;
 var moveList = [], scoreList =[];
 var game = new Chess(), 
         statusEl = $('#status'),
@@ -54,7 +54,9 @@ function updateStatus() {
     };
 
     var onDrop = function(source, target) {
-   
+        print source
+        print ':'
+        print target
         if (board.hasOwnProperty('removeGreySquares') && typeof board.removeGreySquares === 'function') {
             board.removeGreySquares();
         }
@@ -65,7 +67,10 @@ function updateStatus() {
             to: target,
             promotion: $("#promotion").val()
         });
-
+        
+        print 'move:'
+        print move    
+            
         // illegal move
         if (move === null) return 'snapback';
 
@@ -74,6 +79,12 @@ function updateStatus() {
         moveList.push(move);
         scoreList.push(scoreList.length === 0 ? 0 : scoreList[scoreList.length - 1]);
         cursor = moveList.length;
+            if (cursor === 0) {
+                 cursor++;
+                 board.position(game.fen(), true);
+                 updateStatus();    
+        }
+        
     };
 
     var onMouseoverSquare = function(square) {
@@ -104,6 +115,7 @@ function updateStatus() {
     };
 var onSnapEnd = function() {
         if (!game.game_over() && game.turn() !== player) {
+              //  updateStatus();
         }
     };
 function createBoard(pieceSet) {
