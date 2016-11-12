@@ -725,7 +725,7 @@
                 side1Mesh.position.set(-7, -0.25, 7);
                 side1.computeFaceNormals();
                 side1.computeVertexNormals();
-                SCENE.add(side1);
+                SCENE.add(side1Mesh);
 
                 // Add the file / rank labels
                 var opts = {
