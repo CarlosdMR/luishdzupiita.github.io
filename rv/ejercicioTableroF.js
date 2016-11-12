@@ -10,7 +10,7 @@ function setUpBoard() {
     currentPosition = board.position();
     board.destroy();
   }
-  windowsWidth = $(window).width()
+  windowsWidth = $(window).width()*0.8
   windowsWidthPx = windowsWidth.toString() + 'px'
   $('#inner').css('width', windowsWidthPx);
   $('#outer').css('padding', '');
