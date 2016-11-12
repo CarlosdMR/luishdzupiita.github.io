@@ -18,3 +18,5 @@ function setUpBoard() {
   board.position(currentPosition, false);
 }
 setUpBoard();
+
+$('#flip').on('click', board.flip);
