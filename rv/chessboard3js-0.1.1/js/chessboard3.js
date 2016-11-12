@@ -2005,7 +2005,7 @@
             }
             init();
             return widget;
-        };
+        }
 
     // expose util functions
     window.ChessBoard3.webGLEnabled = webGLEnabled;
