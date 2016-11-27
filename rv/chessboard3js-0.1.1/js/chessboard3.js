@@ -1645,8 +1645,8 @@
             widget.scene = function() { return SCENE;};
             widget.camera = function() { return CAMERA;};
             widget.leg = function (){
-                pataGeometry = GEOMETRIES['LEG'];
-                pataMesh = new THREE.Mesh(pataGeometry, material);
+                var pataGeometry = GEOMETRIES['LEG'];
+                var pataMesh = new THREE.Mesh(pataGeometry, material);
                 return pataMesh;
             }
 
