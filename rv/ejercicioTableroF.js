@@ -1,4 +1,5 @@
 var cursor = 0;
+console.log('hilo')
 var moveList = [], scoreList =[];
 var game = new Chess(), 
         statusEl = $('#status'),
