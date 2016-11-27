@@ -139,6 +139,9 @@ function createBoard(pieceSet) {
  windowsWidthPx = windowsWidth.toString() + 'px'
  $('#board').css('width', windowsWidthPx);
 board = createBoard();
+renderer = board.renderer();
+scene = board.scene();
+camera = board.camera();
 
 $('#flip').on('click', board.flip);
 
