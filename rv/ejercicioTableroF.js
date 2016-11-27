@@ -1,7 +1,6 @@
 var cursor = 0;
-console.log('hilo')
 var moveList = [], scoreList =[];
-var game = new Chess(), 
+var game = new Chess(),
         statusEl = $('#status'),
         fenEl = $('#fen'),
         pgnEl = $('#pgn');
@@ -33,7 +32,7 @@ function updateStatus() {
 
         // El juego continua
         else {
-    
+
             status += 'Mueven ' + moveColor;
 
             // Jaque?
@@ -44,16 +43,16 @@ function updateStatus() {
 
         fenEl.html(game.fen().replace(/ /g, '&nbsp;'));
         var currentPGN = game.pgn({max_width:10,newline_char:"<br>"});
-        
+
         entirePGN = currentPGN;
         pgnEl.html(currentPGN);
         statusEl.html(status);
     };
 
     var onDrop = function(source, target) {
-        console.log(source)
-        console.log(':')
-        console.log(target)
+        // console.log(source)
+        // console.log(':')
+        // console.log(target)
         if (board.hasOwnProperty('removeGreySquares') && typeof board.removeGreySquares === 'function') {
             board.removeGreySquares();
         }
@@ -64,10 +63,10 @@ function updateStatus() {
             to: target,
             promotion: $("#promotion").val()
         });
-        
-        console.log('move:')
-        console.log(move)    
-            
+
+        // console.log('move:')
+        // console.log(move)
+
         // illegal move
         if (move === null) return 'snapback';
 
@@ -79,9 +78,9 @@ function updateStatus() {
             if (cursor === 0) {
                  cursor++;
                  board.position(game.fen(), true);
-                 updateStatus();    
+                 updateStatus();
         }
-        
+
     };
 
     var onMouseoverSquare = function(square) {
@@ -112,7 +111,7 @@ function updateStatus() {
     };
 var onSnapEnd = function() {
               //  updateStatus();
-        
+
     };
 function createBoard(pieceSet) {
         var cfg = {
@@ -134,9 +133,9 @@ function createBoard(pieceSet) {
                 cfg.pieceSet = 'assets/chesspieces/' + pieceSet + '/{piece}.json';
             }
             return new ChessBoard3('board', cfg);
-        
+
     }
- windowsWidth = $(window).width()*0.8
+ windowsWidth = $(window).width()*1
  windowsWidthPx = windowsWidth.toString() + 'px'
  $('#board').css('width', windowsWidthPx);
 board = createBoard();
