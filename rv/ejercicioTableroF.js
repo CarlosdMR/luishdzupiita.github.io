@@ -135,7 +135,7 @@ function createBoard(pieceSet) {
             return new ChessBoard3('board', cfg);
 
     }
- windowsWidth = $(window).width()*1
+ windowsWidth = $(window).width()*0.75
  windowsWidthPx = windowsWidth.toString() + 'px'
  $('#board').css('width', windowsWidthPx);
 board = createBoard();
