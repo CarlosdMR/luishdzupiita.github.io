@@ -731,7 +731,7 @@
                 mesh.position.y = uplift;
 
                 if (species==='k' || species==='K' || species==='q' || species==='Q') {
-                    mesh.scale.y = 0.7;
+                    mesh.scale.y = 0.8;
                 }
 
                 pataGeometry = GEOMETRIES['LEG'];
