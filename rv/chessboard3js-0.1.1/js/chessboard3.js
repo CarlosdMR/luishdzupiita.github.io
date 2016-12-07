@@ -2137,6 +2137,7 @@
                 }
             }
             init();
+            mouselessLoop();
             return widget;
         };
 
