@@ -2126,7 +2126,7 @@
                 var negFinalPosX = -1*Math.PI + Math.PI*0.95;
                 if (killFlag) {
                         console.log(drag_cache.mesh.children[2].rotation.x)
-                        tqr = Math.PI/20;
+                        tqr = Math.PI/32;
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
                             finishedZ = true;
                         }
@@ -2163,7 +2163,7 @@
 
                 }
                 RENDERER.render(SCENE,CAMERA);
-            setTimeout(mouselessLoop, 10);
+            setTimeout(mouselessLoop, 6);
             };
             mouselessLoop();
             return widget;
