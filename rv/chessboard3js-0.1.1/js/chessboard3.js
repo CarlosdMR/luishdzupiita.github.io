@@ -2127,17 +2127,19 @@
                             console.log('Rotating X')
                             console.log(drag_cache.mesh.children[2].rotation.x)
                             drag_cache.mesh.children[2].rotateX(tqr);
+                        } else if (drag_cache.mesh.children[2].rotation.z >= finalPosZ && drag_cache.mesh.children[2].rotation.x >= finalPosX){
+                            // Finished animation
+                            console.log('Finished')
+                                killFlag = false;
+                                tqr = 0;
+                                drag_cache.mesh.children[2].rotateZ(-finalPosZ);
+                                drag_cache.mesh.children[2].rotateX(-finalPosX);
                         } else {
                             console.log('Rotating Both')
                         drag_cache.mesh.children[2].rotateZ(tqr);
                         drag_cache.mesh.children[2].rotateX(tqr);
                         }
-                        if (drag_cache.mesh.children[2].rotation.z >= finalPosZ && drag_cache.mesh.children[2].rotation.x >= finalPosX) { // Finished animation
-                            killFlag = false;
-                            tqr = 0;
-                            drag_cache.mesh.children[2].rotateZ(-finalPosZ);
-                            drag_cache.mesh.children[2].rotateX(-finalPosX);
-                        }
+
                 }
                 RENDERER.render(SCENE,CAMERA);
             setTimeout(mouselessLoop, 10);
