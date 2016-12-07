@@ -2050,27 +2050,7 @@
                 }
                 checkInitialization();
 
-                function mouselessLoop() {
-                    if (killFlag) {
-                        if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
-                            console.log('Inside kill animation');
 
-                            var tweenArm = new TWEEN.Tween({t: 0})
-                                .to({t: Math.PI/4}, 1600)
-                                .onUpdate(function() {
-                                    var t = this.t;
-                                    drag_cache.mesh.rotateZ(t);
-                                })
-                                .onComplete(function() {
-                                    drag_cache.mesh.rotateZ(0);
-                                    killFlag=false;
-                                });
-                            tweenArm.start();
-                        }
-
-                    }
-                setTimeout(mouselessLoop, 10);
-                };
 
                 function animate() {
                     requestAnimationFrame(animate);
@@ -2137,6 +2117,27 @@
                 }
             }
             init();
+            function mouselessLoop() {
+                if (killFlag) {
+                    if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
+                        console.log('Inside kill animation');
+
+                        var tweenArm = new TWEEN.Tween({t: 0})
+                            .to({t: Math.PI/4}, 1600)
+                            .onUpdate(function() {
+                                var t = this.t;
+                                drag_cache.mesh.rotateZ(t);
+                            })
+                            .onComplete(function() {
+                                drag_cache.mesh.rotateZ(0);
+                                killFlag=false;
+                            });
+                        tweenArm.start();
+                    }
+
+                }
+            setTimeout(mouselessLoop, 10);
+            };
             mouselessLoop();
             return widget;
         };
