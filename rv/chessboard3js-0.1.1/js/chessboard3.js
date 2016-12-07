@@ -2124,7 +2124,7 @@
                         tqr = Math.PI/64;
                         drag_cache.mesh.children[2].rotateZ(tqr);
                         console.log(tqr)
-                        if (tqr >= finalPos) { // Finished animation
+                        if (drag_cache.mesh.children[2].rotation.z >= finalPos) { // Finished animation
                             killFlag = false;
                             tqr = 0;
                             drag_cache.mesh.children[2].rotateZ(-finalPos);
