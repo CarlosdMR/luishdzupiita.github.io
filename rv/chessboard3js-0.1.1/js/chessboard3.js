@@ -2118,6 +2118,7 @@
             }
             init();
             function mouselessLoop() {
+                console.log('mouselessLoop');
                 if (killFlag) {
                     if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
                         console.log('Inside kill animation');
