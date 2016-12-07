@@ -2121,11 +2121,11 @@
             var finishedZ = false;
             var finishedX = false;
             function mouselessLoop() {
-                var finalPosZ = Math.PI/4;
+                var finalPosZ = Math.PI/2;
                 var finalPosX = Math.PI*1.95;
                 var negFinalPosX = -1*Math.PI + Math.PI*0.95;
                 if (killFlag) {
-                        tqr = Math.PI/64;
+                        tqr = Math.PI/32;
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
                             finishedZ = true;
                         }
