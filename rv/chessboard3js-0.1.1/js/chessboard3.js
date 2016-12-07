@@ -11,6 +11,7 @@
  var mat2 = false;
  var mat1 = false;
  var dragUpdate = 0;
+ var drag_cache;
 ;(function() {
     'use strict';
 
@@ -1440,6 +1441,7 @@
 
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
                     killFlag = true;
+                    drag_cache = DRAG_INFO;
                 }
                 newPosition[DRAG_INFO.location] = DRAG_INFO.piece;
                 PIECE_MESH_IDS[DRAG_INFO.location] = DRAG_INFO.mesh.id;
@@ -1448,25 +1450,6 @@
                 setCurrentPosition(newPosition);
                 if (cfg.hasOwnProperty('onSnapEnd') && typeof cfg.onSnapEnd === 'function') {
                     cfg.onSnapEnd(src, tgt, piece);
-                }
-                if (killFlag) {
-                    if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
-                        console.log('Inside kill animation');
-                        var drag_cache = DRAG_INFO;
-                        var tweenArm = new TWEEN.Tween({t: 0})
-                            .to({t: Math.PI/4}, 1600)
-                            .onUpdate(function() {
-                                var t = this.t;
-                                console.log('+1')
-                                console.log(drag_cache.mesh.id)
-                                drag_cache.mesh.rotateZ(t);
-                            })
-                            .onComplete(function() {
-                                console.log('Finished Animation')
-                                drag_cache.mesh.rotateZ(0);
-                            });
-                        tweenArm.start();
-                    }
                 }
 
                 DRAG_INFO = null;
@@ -1685,6 +1668,7 @@
                 if (CAMERA_CONTROLS) {
                     CAMERA_CONTROLS.enabled = true;
                 }
+
                 RENDER_FLAG = true;
                 removeSquareHighlights();
             }
@@ -2067,6 +2051,23 @@
 
                 function animate() {
                     requestAnimationFrame(animate);
+                    if (killFlag) {
+                        if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
+                            console.log('Inside kill animation');
+
+                            var tweenArm = new TWEEN.Tween({t: 0})
+                                .to({t: Math.PI/4}, 1600)
+                                .onUpdate(function() {
+                                    var t = this.t;
+                                    drag_cache.mesh.rotateZ(t);
+                                })
+                                .onComplete(function() {
+                                    drag_cache.mesh.rotateZ(0);
+                                });
+                            tweenArm.start();
+                        }
+                        killFlag=false;
+                    }
                     if (window.TWEEN !== undefined && typeof window.TWEEN === 'object') {
                         TWEEN.update();
                     }
