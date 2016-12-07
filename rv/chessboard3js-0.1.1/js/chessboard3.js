@@ -735,7 +735,7 @@
                 }
 
                 pataGeometry = GEOMETRIES['LEG'];
-                brazoGeometry = GEOMETRIES['LEG'];
+                brazoGeometry = GEOMETRIES['ARM'];
                 meshPata1 = new THREE.Mesh(pataGeometry, material);
                 meshPata2 = new THREE.Mesh(pataGeometry, material);
                 meshBrazo = new THREE.Mesh(brazoGeometry, material);
@@ -1701,7 +1701,7 @@
                 return pataMesh;
             }
             widget.arm = function (){
-                var brazoGeometry = GEOMETRIES['LEG'];
+                var brazoGeometry = GEOMETRIES['ARM'];
                 var brazoMesh = new THREE.Mesh(brazoGeometry, material);
                 return brazoMesh;
             }
@@ -1997,8 +1997,8 @@
                     && GEOMETRIES.B !== undefined
                     && GEOMETRIES.R !== undefined
                     && GEOMETRIES.Q !== undefined
-                    && GEOMETRIES.K !== undefined
-                    && GEOMETRIES.LEG !== undefined;
+                    && GEOMETRIES.K !== undefined;
+                    //&& GEOMETRIES.LEG !== undefined;
                     //&& GEOMETRIES.ARM !== undefined;
             }
 
@@ -2028,7 +2028,7 @@
                 loadGeometry('N');
                 loadGeometry('P');
                 loadGeometry('LEG');
-                //loadGeometry('ARM');
+                loadGeometry('ARM');
 
                 function checkInitialization() {
                     if (checkGeometriesLoaded()) {
