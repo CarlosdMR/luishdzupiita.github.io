@@ -1437,20 +1437,21 @@
                 }
                 if (newPosition[DRAG_INFO.location]) {
 
-                if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
-                    var tweenArm = new TWEEN.Tween({t: 0})
-                        .to({t: Math.PI/4}, 1600)
-                        .onUpdate(function() {
-                            var t = this.t;
-                            DRAG_INFO.mesh.rotateZ(t);
-                        })
-                        .onComplete(function() {
-                            DRAG_INFO.mesh.rotateZ(0);
-                        });
-                    tweenArm.start();
-                }
-
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
+                    if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
+                        var tweenArm = new TWEEN.e({t: 0})
+                            .to({t: Math.PI/4}, 1600)
+                            .onUpdate(function() {
+                                var t = this.t;
+                                console.log('+1')
+                                DRAG_INFO.mesh.rotateZ(t);
+                            })
+                            .onComplete(function() {
+                                console.log('Finished Animation')
+                                DRAG_INFO.mesh.rotateZ(0);
+                            });
+                        tweenArm.start();
+                    }
                 }
                 newPosition[DRAG_INFO.location] = DRAG_INFO.piece;
                 PIECE_MESH_IDS[DRAG_INFO.location] = DRAG_INFO.mesh.id;
