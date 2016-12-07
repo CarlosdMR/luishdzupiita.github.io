@@ -2140,7 +2140,7 @@
                         if (Math.abs(killed_mesh.rotation.z) >= Math.abs(finalPosZ)) {
                             killedPieceDown = true;
                         } }else {
-                            if (killed_mesh.rotation.z <= Math.abs(finalPosZ)) {
+                            if (killed_mesh.rotation.z <= Math.abs(finalPosZ) && killed_mesh.rotation.z!=0) {
                                 killedPieceDown = true;
                         }
                       }
