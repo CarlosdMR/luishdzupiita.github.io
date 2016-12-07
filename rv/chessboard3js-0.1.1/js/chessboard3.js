@@ -2007,9 +2007,9 @@
                     && GEOMETRIES.B !== undefined
                     && GEOMETRIES.R !== undefined
                     && GEOMETRIES.Q !== undefined
-                    && GEOMETRIES.K !== undefined;
-                    //&& GEOMETRIES.LEG !== undefined;
-                    //&& GEOMETRIES.ARM !== undefined;
+                    && GEOMETRIES.K !== undefined
+                    && GEOMETRIES.LEG !== undefined
+                    && GEOMETRIES.ARM !== undefined;
             }
 
             function init() {
@@ -2050,8 +2050,7 @@
                 }
                 checkInitialization();
 
-                function animate() {
-                    requestAnimationFrame(animate);
+                function mouselessLoop() {
                     if (killFlag) {
                         if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
                             console.log('Inside kill animation');
@@ -2064,11 +2063,18 @@
                                 })
                                 .onComplete(function() {
                                     drag_cache.mesh.rotateZ(0);
+                                    killFlag=false;
                                 });
                             tweenArm.start();
                         }
-                        killFlag=false;
+
                     }
+                setTimeout(mouselessLoop, 10);
+                };
+
+                function animate() {
+                    requestAnimationFrame(animate);
+
                     if (window.TWEEN !== undefined && typeof window.TWEEN === 'object') {
                         TWEEN.update();
                     }
