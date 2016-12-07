@@ -2117,20 +2117,20 @@
                 }
             }
             init();
+            var tqr = 0;
             function mouselessLoop() {
                 console.log('mouselessLoop');
-                var t = 0;
+
                 var finalPos = Math.PI/2;
                 if (killFlag) {
-
                         console.log('Inside kill animation');
-                        t += Math.PI/32;
-                        drag_cache.mesh.rotateZ(t);
-                        console.log(t)
-                        if (t >= finalPos) {
+                        tqr += Math.PI/32;
+                        drag_cache.mesh.children[0].rotateZ(tqr);
+                        console.log(tqr)
+                        if (tqr >= finalPos) { // Finished animation
                             killFlag = false;
+                            tqr = 0;
                         }
-
                 }
                 RENDERER.render(SCENE,CAMERA);
             setTimeout(mouselessLoop, 10);
