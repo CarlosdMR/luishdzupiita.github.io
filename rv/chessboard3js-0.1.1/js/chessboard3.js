@@ -1998,8 +1998,8 @@
                     && GEOMETRIES.R !== undefined
                     && GEOMETRIES.Q !== undefined
                     && GEOMETRIES.K !== undefined
-                    && GEOMETRIES.LEG !== undefined
-                    && GEOMETRIES.ARM !== undefined;
+                    && GEOMETRIES.LEG !== undefined;
+                    //&& GEOMETRIES.ARM !== undefined;
             }
 
             function init() {
