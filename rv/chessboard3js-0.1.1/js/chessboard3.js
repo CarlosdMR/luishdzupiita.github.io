@@ -1452,16 +1452,18 @@
                 if (killFlag) {
                     if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
                         console.log('Inside kill animation');
+                        var drag_cache = DRAG_INFO;
                         var tweenArm = new TWEEN.Tween({t: 0})
                             .to({t: Math.PI/4}, 1600)
                             .onUpdate(function() {
                                 var t = this.t;
                                 console.log('+1')
-                                DRAG_INFO.mesh.rotateZ(t);
+                                console.log(drag_cache.mesh.id)
+                                drag_cache.mesh.rotateZ(t);
                             })
                             .onComplete(function() {
                                 console.log('Finished Animation')
-                                DRAG_INFO.mesh.rotateZ(0);
+                                drag_cache.mesh.rotateZ(0);
                             });
                         tweenArm.start();
                     }
