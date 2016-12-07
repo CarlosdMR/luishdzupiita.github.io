@@ -12,6 +12,7 @@
  var mat1 = false;
  var dragUpdate = 0;
  var drag_cache;
+ var killed_mesh;
  var killFlag=false;
 ;(function() {
     'use strict';
@@ -1439,8 +1440,8 @@
                 }
 
                 if (newPosition[DRAG_INFO.location]) {
-
-                    SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
+                    killed_mesh = SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]);
+                    //SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
                     killFlag = true;
                     drag_cache = DRAG_INFO;
                 }
@@ -2120,6 +2121,7 @@
             var tqr = 0;
             var finishedZ = false;
             var finishedX = false;
+            var killedPieceDown = false;
             function mouselessLoop() {
                 var finalPosZ = Math.PI/2;
                 var finalPosX = Math.PI*1.95;
@@ -2133,6 +2135,14 @@
                         if (Math.abs(drag_cache.mesh.children[2].rotation.x) <= Math.abs(negFinalPosX) && drag_cache.mesh.children[2].rotation.x<-0.0001  ) {
                             finishedX = true;
                         }
+                        if (killed_mesh.rotation.z >= finalPosZ) {
+                            killedPieceDown = true;
+                        }
+
+                        if (!killedPieceDown) {
+                            killed_mesh.rotateZ(tqr);
+                        }
+
                         if (!finishedX && !finishedZ) {
                            console.log('Rotating Z')
                             drag_cache.mesh.children[2].rotateZ(tqr);
@@ -2157,6 +2167,10 @@
                                 finishedZ = false;
                                 drag_cache.mesh.children[2].rotateX(-finalPosX);
                                 drag_cache.mesh.children[2].rotateZ(-finalPosZ);
+
+                                SCENE.remove(killed_mesh);
+                                killedPieceDown = false;
+
                         } else {
                             console.log('Wut')
                         }
