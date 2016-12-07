@@ -1437,8 +1437,20 @@
                 }
                 if (newPosition[DRAG_INFO.location]) {
                     console.log('SE LA COMIO')
-                    console.log(DRAG_INFO.mesh.children[2])
-                    DRAG_INFO.mesh.children[2].rotateX(Math.PI);
+                    console.log(DRAG_INFO.mesh.children[2].position.x)
+
+                    DRAG_INFO.mesh.children[2].rotateZ(Math.PI/4);
+                    RENDERER.render(SCENE,CAMERA);
+                    setTimeout(function(){}, 200);
+
+                    DRAG_INFO.mesh.children[2].rotateZ(-Math.PI);
+                    RENDERER.render(SCENE,CAMERA);
+                    setTimeout(function(){}, 200);
+
+                    DRAG_INFO.mesh.children[2].rotateZ(0);
+                    RENDERER.render(SCENE,CAMERA);
+                    setTimeout(function(){}, 200);
+
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
                 }
                 newPosition[DRAG_INFO.location] = DRAG_INFO.piece;
