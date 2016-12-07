@@ -723,6 +723,7 @@
                 var legOffset = 0.2;
                 var uplift = 0.8;
                 var legScale = 1.4;
+                var armScale = 3.0;
 
                 geometry = GEOMETRIES[species];
                 mesh = new THREE.Mesh(geometry, material);
@@ -762,7 +763,7 @@
                 meshPata1.rotateY(Math.PI)
                 meshPata1.scale.set(legScale,legScale,legScale);
                 meshPata2.scale.set(legScale,legScale,legScale);
-                meshBrazo.scale.set(legScale,legScale,legScale);
+                meshBrazo.scale.set(armScale,armScale,armScale);
                 return mesh;
             }
 
