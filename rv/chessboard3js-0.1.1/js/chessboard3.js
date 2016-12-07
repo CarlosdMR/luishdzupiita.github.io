@@ -2129,7 +2129,7 @@
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
                             finishedZ = true;
                         }
-                        if (drag_cache.mesh.children[2].rotation.x >= negFinalPosX) {
+                        if (drag_cache.mesh.children[2].rotation.x >= negFinalPosX && drag_cache.mesh.children[2].rotation.x<0  ) {
                             finishedX = true;
                         }
                         if (!finishedX && !finishedZ) {
