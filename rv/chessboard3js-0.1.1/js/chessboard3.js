@@ -1701,7 +1701,7 @@
                 return pataMesh;
             }
             widget.arm = function (){
-                var brazoGeometry = GEOMETRIES['ARM'];
+                var brazoGeometry = GEOMETRIES['LEG'];
                 var brazoMesh = new THREE.Mesh(brazoGeometry, material);
                 return brazoMesh;
             }
