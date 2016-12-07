@@ -719,7 +719,7 @@
                     }
 
 
-                var geometry, mesh, pataGeometry, meshPata1, meshPata2;
+                var geometry, mesh, pataGeometry, meshPata1, meshPata2, brazoGeometry;
                 var legOffset = 0.2;
                 var uplift = 0.8;
                 var legScale = 1.4;
