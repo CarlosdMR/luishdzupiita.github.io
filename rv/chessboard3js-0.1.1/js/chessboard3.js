@@ -1435,10 +1435,23 @@
                     delete newPosition[DRAG_INFO.source];
                     delete PIECE_MESH_IDS[DRAG_INFO.source];
                 }
+                var killFlag = false;
                 if (newPosition[DRAG_INFO.location]) {
 
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
+                    killFlag = true;
+                }
+                newPosition[DRAG_INFO.location] = DRAG_INFO.piece;
+                PIECE_MESH_IDS[DRAG_INFO.location] = DRAG_INFO.mesh.id;
+                var src = DRAG_INFO.source, tgt = DRAG_INFO.location, piece = DRAG_INFO.piece;
+
+                setCurrentPosition(newPosition);
+                if (cfg.hasOwnProperty('onSnapEnd') && typeof cfg.onSnapEnd === 'function') {
+                    cfg.onSnapEnd(src, tgt, piece);
+                }
+                if (killFlag) {
                     if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
+                        console.log('Inside kill animation');
                         var tweenArm = new TWEEN.e({t: 0})
                             .to({t: Math.PI/4}, 1600)
                             .onUpdate(function() {
@@ -1453,14 +1466,8 @@
                         tweenArm.start();
                     }
                 }
-                newPosition[DRAG_INFO.location] = DRAG_INFO.piece;
-                PIECE_MESH_IDS[DRAG_INFO.location] = DRAG_INFO.mesh.id;
-                var src = DRAG_INFO.source, tgt = DRAG_INFO.location, piece = DRAG_INFO.piece;
+
                 DRAG_INFO = null;
-                setCurrentPosition(newPosition);
-                if (cfg.hasOwnProperty('onSnapEnd') && typeof cfg.onSnapEnd === 'function') {
-                    cfg.onSnapEnd(src, tgt, piece);
-                }
             }
 
             // ---------------------------------------------------------------------//
