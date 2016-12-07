@@ -1437,19 +1437,18 @@
                 }
                 if (newPosition[DRAG_INFO.location]) {
 
-
-
+                if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
                     var tweenArm = new TWEEN.Tween({t: 0})
                         .to({t: Math.PI/4}, 1600)
-                        //.easing(TWEEN.Easing.Elastic.InOut)
                         .onUpdate(function() {
                             var t = this.t;
-                            DRAG_INFO.mesh.children[2].rotateZ(t);
+                            DRAG_INFO.mesh.rotateZ(t);
                         })
                         .onComplete(function() {
-                            DRAG_INFO.mesh.children[2].rotateZ(0);
+                            DRAG_INFO.mesh.rotateZ(0);
                         });
                     tweenArm.start();
+                }
 
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
                 }
