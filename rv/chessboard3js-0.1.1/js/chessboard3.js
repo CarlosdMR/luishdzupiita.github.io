@@ -735,7 +735,7 @@
                 }
 
                 pataGeometry = GEOMETRIES['LEG'];
-                brazoGeometry = GEOMETRIES['LEG'];
+                brazoGeometry = GEOMETRIES['ARM'];
                 meshPata1 = new THREE.Mesh(pataGeometry, material);
                 meshPata2 = new THREE.Mesh(pataGeometry, material);
                 meshBrazo = new THREE.Mesh(brazoGeometry, material);
