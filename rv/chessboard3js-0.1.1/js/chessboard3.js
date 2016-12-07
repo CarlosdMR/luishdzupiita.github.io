@@ -2132,14 +2132,14 @@
                             finishedX = true;
                         }
                         if (!finishedX && !finishedZ) {
-                            console.log('Rotating Both')
+                        //    console.log('Rotating Both')
                             drag_cache.mesh.children[2].rotateZ(tqr);
                             drag_cache.mesh.children[2].rotateX(tqr);
                         } else if (finishedX && !finishedZ) {
-                            console.log('Rotating Z')
+                        //    console.log('Rotating Z')
                             drag_cache.mesh.children[2].rotateZ(tqr);
                         } else if (!finishedX && finishedZ) {
-                            console.log('Rotating X')
+                        //    console.log('Rotating X')
                             drag_cache.mesh.children[2].rotateX(tqr);
                         } else if (finishedX && finishedZ){
                             // Finished animation
