@@ -1437,7 +1437,8 @@
                 }
                 if (newPosition[DRAG_INFO.location]) {
                     console.log('SE LA COMIO')
-                    DRAG_INFO.mesh.children[2].rotateY(Math.PI);
+                    console.log(DRAG_INFO.mesh.children[2])
+                    DRAG_INFO.mesh.children[2].rotateX(Math.PI);
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
                 }
                 newPosition[DRAG_INFO.location] = DRAG_INFO.piece;
