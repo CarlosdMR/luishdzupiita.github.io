@@ -2126,12 +2126,13 @@
                         console.log('Inside kill animation');
                         t += Math.PI/32;
                         drag_cache.mesh.rotateZ(t);
-
+                        console.log(t)
                         if (t >= finalPos) {
                             killFlag = false;
                         }
 
                 }
+                RENDERER.render(SCENE,CAMERA);
             setTimeout(mouselessLoop, 10);
             };
             mouselessLoop();
