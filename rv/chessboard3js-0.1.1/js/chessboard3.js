@@ -2130,7 +2130,7 @@
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
                             finishedZ = true;
                         }
-                        if (Math.abs(drag_cache.mesh.children[2].rotation.x) >= Math.abs(negFinalPosX) && drag_cache.mesh.children[2].rotation.x<-0.001  ) {
+                        if (Math.abs(drag_cache.mesh.children[2].rotation.x) <= Math.abs(negFinalPosX) && drag_cache.mesh.children[2].rotation.x<-0.0001  ) {
                             finishedX = true;
                         }
                         if (!finishedX && !finishedZ) {
@@ -2138,7 +2138,7 @@
                             drag_cache.mesh.children[2].rotateZ(tqr);
                             //drag_cache.mesh.children[2].rotateX(tqr);
                         } else if (finishedX && !finishedZ) {
-                           console.log('Rotating Z')
+                           console.log('Should not be here')
                             drag_cache.mesh.children[2].rotateZ(tqr);
                         } else if (!finishedX && finishedZ) {
                             console.log('Rotating X')
