@@ -1602,7 +1602,7 @@
                 // console.log(DRAG_INFO.mesh)
                 // console.log(DRAG_INFO.mesh.children[0])
                 var anAm = 0.4;
-                var anPer = 0.1;
+                var anPer = 0.2;
                 DRAG_INFO.mesh.children[0].position.z = anAm*Math.sin(dragUpdate*anPer);
                 DRAG_INFO.mesh.children[1].position.z = -1*anAm*Math.sin(dragUpdate*anPer);
 
@@ -2121,15 +2121,16 @@
             function mouselessLoop() {
                 console.log('mouselessLoop');
 
-                var finalPos = Math.PI/2;
+                var finalPos = Math.PI/4;
                 if (killFlag) {
                         console.log('Inside kill animation');
-                        tqr += Math.PI/32;
+                        tqr += Math.PI/64;
                         drag_cache.mesh.children[2].rotateZ(tqr);
                         console.log(tqr)
                         if (tqr >= finalPos) { // Finished animation
                             killFlag = false;
                             tqr = 0;
+                            drag_cache.mesh.children[2].rotateZ(-finalPos);
                         }
                 }
                 RENDERER.render(SCENE,CAMERA);
