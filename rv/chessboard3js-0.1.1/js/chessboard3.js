@@ -2125,11 +2125,12 @@
                 var finalPosX = Math.PI*1.95;
                 var negFinalPosX = -1*Math.PI + Math.PI*0.95;
                 if (killFlag) {
+                        console.log(drag_cache.mesh.children[2].rotation.x)
                         tqr = Math.PI/32;
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
                             finishedZ = true;
                         }
-                        if (drag_cache.mesh.children[2].rotation.x >= negFinalPosX && drag_cache.mesh.children[2].rotation.x<0  ) {
+                        if (Math.abs(drag_cache.mesh.children[2].rotation.x) <= Math.abs(negFinalPosX) && drag_cache.mesh.children[2].rotation.x<0  ) {
                             finishedX = true;
                         }
                         if (!finishedX && !finishedZ) {
