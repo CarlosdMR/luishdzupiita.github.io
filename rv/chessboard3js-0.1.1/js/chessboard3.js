@@ -2119,12 +2119,9 @@
             init();
             var tqr = 0;
             function mouselessLoop() {
-                console.log('mouselessLoop');
-
                 var finalPos = Math.PI/4;
                 if (killFlag) {
-                        console.log('Inside kill animation');
-                        tqr += Math.PI/64;
+                        tqr = Math.PI/64;
                         drag_cache.mesh.children[2].rotateZ(tqr);
                         console.log(tqr)
                         if (tqr >= finalPos) { // Finished animation
