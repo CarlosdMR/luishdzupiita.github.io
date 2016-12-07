@@ -2139,12 +2139,12 @@
                         if (color=='w') {
                         if (Math.abs(killed_mesh.rotation.z) >= Math.abs(finalPosZ)) {
                             killedPieceDown = true;
-                        } else {
-                            if (Math.abs(killed_mesh.rotation.z) <= Math.abs(finalPosZ)) {
+                        } }else {
+                            if (killed_mesh.rotation.z <= Math.abs(finalPosZ)) {
                                 killedPieceDown = true;
                         }
-                    }
-                }
+                      }
+
 
                         if (!killedPieceDown) {
                             if (color=='w') {
