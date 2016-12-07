@@ -2119,22 +2119,17 @@
             init();
             function mouselessLoop() {
                 console.log('mouselessLoop');
+                var t = 0;
+                var finalPos = Math.PI/2;
                 if (killFlag) {
-                    if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
-                        console.log('Inside kill animation');
 
-                        var tweenArm = new TWEEN.Tween({t: 0})
-                            .to({t: Math.PI/4}, 1600)
-                            .onUpdate(function() {
-                                var t = this.t;
-                                drag_cache.mesh.rotateZ(t);
-                            })
-                            .onComplete(function() {
-                                drag_cache.mesh.rotateZ(0);
-                                killFlag=false;
-                            });
-                        tweenArm.start();
-                    }
+                        console.log('Inside kill animation');
+                        t += Math.PI/32;
+                        drag_cache.mesh.rotateZ(t);
+
+                        if (t >= finalPos) {
+                            killFlag = false;
+                        }
 
                 }
             setTimeout(mouselessLoop, 10);
