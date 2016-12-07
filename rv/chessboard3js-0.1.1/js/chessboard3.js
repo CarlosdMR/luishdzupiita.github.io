@@ -2127,7 +2127,8 @@
                 var finalPosX = Math.PI*1.95;
                 var negFinalPosX = -1*Math.PI + Math.PI*0.95;
                 if (killFlag) {
-                        console.log(drag_cache.mesh.children[2].rotation.x)
+                        var color = drag_cache.piece.charAt(0);
+                        console.log(killed_mesh.rotation.z)
                         tqr = Math.PI/32;
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
                             finishedZ = true;
@@ -2135,24 +2136,30 @@
                         if (Math.abs(drag_cache.mesh.children[2].rotation.x) <= Math.abs(negFinalPosX) && drag_cache.mesh.children[2].rotation.x<-0.0001  ) {
                             finishedX = true;
                         }
-                        if (killed_mesh.rotation.z >= finalPosZ) {
+                        if (Math.abs(killed_mesh.rotation.z) >= Math.abs(finalPosZ)) {
                             killedPieceDown = true;
                         }
 
                         if (!killedPieceDown) {
+                            if (color=='w') {
+                                console.log('Black falling')
                             killed_mesh.rotateZ(tqr);
+                        } else {
+                            console.log('White falling')
+                            killed_mesh.rotateZ(-tqr);
+                            }
                         }
 
                         if (!finishedX && !finishedZ) {
-                           console.log('Rotating Z')
+                          // console.log('Rotating Z')
                             drag_cache.mesh.children[2].rotateZ(tqr);
                             //drag_cache.mesh.children[2].rotateX(tqr);
                         } else if (finishedX && !finishedZ) {
-                           console.log('Should not be here')
+                         //  console.log('Should not be here')
                             drag_cache.mesh.children[2].rotateZ(tqr);
                         } else if (!finishedX && finishedZ) {
-                            console.log('Rotating X')
-                            var color = drag_cache.piece.charAt(0);
+                            //console.log('Rotating X')
+
                             if (color=='w') {
                             drag_cache.mesh.children[2].rotateX(-tqr);
                             } else {
@@ -2160,7 +2167,7 @@
                             }
                         } else if (finishedX && finishedZ){
                             // Finished animation
-                            console.log('Finished')
+                            //console.log('Finished')
                                 killFlag = false;
                                 tqr = 0;
                                 finishedX = false;
