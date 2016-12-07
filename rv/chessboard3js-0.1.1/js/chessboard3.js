@@ -2119,15 +2119,21 @@
             init();
             var tqr = 0;
             function mouselessLoop() {
-                var finalPos = Math.PI/4;
+                var finalPosZ = Math.PI/4;
+                var finalPosX = Math.PI*1.95;
                 if (killFlag) {
-                        tqr = Math.PI/64;
+                        tqr = Math.PI/40;
+                        if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
+                            drag_cache.mesh.children[2].rotateX(tqr);
+                        } else {
                         drag_cache.mesh.children[2].rotateZ(tqr);
-                        console.log(tqr)
-                        if (drag_cache.mesh.children[2].rotation.z >= finalPos) { // Finished animation
+                        drag_cache.mesh.children[2].rotateX(tqr);
+                        }
+                        if (drag_cache.mesh.children[2].rotation.z >= finalPosZ && drag_cache.mesh.children[2].rotation.x >= finalPosX) { // Finished animation
                             killFlag = false;
                             tqr = 0;
-                            drag_cache.mesh.children[2].rotateZ(-finalPos);
+                            drag_cache.mesh.children[2].rotateZ(-finalPosZ);
+                            drag_cache.mesh.children[2].rotateX(-finalPosX);
                         }
                 }
                 RENDERER.render(SCENE,CAMERA);
