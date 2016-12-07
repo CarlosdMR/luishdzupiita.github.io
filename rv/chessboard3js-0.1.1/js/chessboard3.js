@@ -2120,7 +2120,7 @@
             var tqr = 0;
             function mouselessLoop() {
                 var finalPosZ = Math.PI/4;
-                var finalPosX = Math.PI;
+                var finalPosX = Math.PI/1.1;
                 if (killFlag) {
                         tqr = Math.PI/40;
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ && drag_cache.mesh.children[2].rotation.x < finalPosX) {
