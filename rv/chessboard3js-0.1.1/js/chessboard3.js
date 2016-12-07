@@ -2118,26 +2118,40 @@
             }
             init();
             var tqr = 0;
+            var finishedZ = false;
+            var finishedX = false;
             function mouselessLoop() {
                 var finalPosZ = Math.PI/4;
-                var finalPosX = Math.PI/1.1;
+                var finalPosX = Math.PI/2;
                 if (killFlag) {
-                        tqr = Math.PI/40;
-                        if (drag_cache.mesh.children[2].rotation.z >= finalPosZ && drag_cache.mesh.children[2].rotation.x < finalPosX) {
-                            console.log('Rotating X')
-                            console.log(drag_cache.mesh.children[2].rotation.x)
+                        tqr = Math.PI/64;
+                        if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
+                            finishedZ = true;
+                        }
+                        if (drag_cache.mesh.children[2].rotation.x >= finalPosX) {
+                            finishedX = true;
+                        }
+                        if (!finishedX && !finishedZ) {
+                            console.log('Rotating Both')
+                            drag_cache.mesh.children[2].rotateZ(tqr);
                             drag_cache.mesh.children[2].rotateX(tqr);
-                        } else if (drag_cache.mesh.children[2].rotation.z >= finalPosZ && drag_cache.mesh.children[2].rotation.x >= finalPosX){
+                        } else if (finishedX && !finishedZ) {
+                            console.log('Rotating Z')
+                            drag_cache.mesh.children[2].rotateZ(tqr);
+                        } else if (!finishedX && finishedZ) {
+                            console.log('Rotating X')
+                            drag_cache.mesh.children[2].rotateX(tqr);
+                        } else if (finishedX && finishedZ){
                             // Finished animation
                             console.log('Finished')
                                 killFlag = false;
                                 tqr = 0;
+                                finishedX = false;
+                                finishedZ = false;
                                 drag_cache.mesh.children[2].rotateZ(-finalPosZ);
                                 drag_cache.mesh.children[2].rotateX(-finalPosX);
                         } else {
-                            console.log('Rotating Both')
-                        drag_cache.mesh.children[2].rotateZ(tqr);
-                        drag_cache.mesh.children[2].rotateX(tqr);
+                            console.log('Wut')
                         }
 
                 }
