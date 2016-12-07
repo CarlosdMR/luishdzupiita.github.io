@@ -2136,8 +2136,12 @@
                         if (Math.abs(drag_cache.mesh.children[2].rotation.x) <= Math.abs(negFinalPosX) && drag_cache.mesh.children[2].rotation.x<-0.0001  ) {
                             finishedX = true;
                         }
+                        if (color=='w') {
                         if (Math.abs(killed_mesh.rotation.z) >= Math.abs(finalPosZ)) {
                             killedPieceDown = true;
+                        } else {
+                            if (Math.abs(killed_mesh.rotation.z) <= Math.abs(finalPosZ)) {
+                                killedPieceDown = true;
                         }
 
                         if (!killedPieceDown) {
