@@ -2123,23 +2123,24 @@
             function mouselessLoop() {
                 var finalPosZ = Math.PI/4;
                 var finalPosX = Math.PI*1.95;
+                var negFinalPosX = -1*Math.PI + Math.PI*0.95;
                 if (killFlag) {
                         tqr = Math.PI/64;
                         if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
                             finishedZ = true;
                         }
-                        if (drag_cache.mesh.children[2].rotation.x >= finalPosX) {
+                        if (drag_cache.mesh.children[2].rotation.x >= negFinalPosX) {
                             finishedX = true;
                         }
                         if (!finishedX && !finishedZ) {
-                        //    console.log('Rotating Both')
+                           console.log('Rotating Both')
                             drag_cache.mesh.children[2].rotateZ(tqr);
                             drag_cache.mesh.children[2].rotateX(tqr);
                         } else if (finishedX && !finishedZ) {
-                        //    console.log('Rotating Z')
+                           console.log('Rotating Z')
                             drag_cache.mesh.children[2].rotateZ(tqr);
                         } else if (!finishedX && finishedZ) {
-                        //    console.log('Rotating X')
+                            console.log('Rotating X')
                             drag_cache.mesh.children[2].rotateX(tqr);
                         } else if (finishedX && finishedZ){
                             // Finished animation
