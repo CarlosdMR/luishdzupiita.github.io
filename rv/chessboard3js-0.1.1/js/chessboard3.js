@@ -2133,9 +2133,9 @@
                             finishedX = true;
                         }
                         if (!finishedX && !finishedZ) {
-                           console.log('Rotating Both')
+                           console.log('Rotating Z')
                             drag_cache.mesh.children[2].rotateZ(tqr);
-                            drag_cache.mesh.children[2].rotateX(tqr);
+                            //drag_cache.mesh.children[2].rotateX(tqr);
                         } else if (finishedX && !finishedZ) {
                            console.log('Rotating Z')
                             drag_cache.mesh.children[2].rotateZ(tqr);
@@ -2149,8 +2149,8 @@
                                 tqr = 0;
                                 finishedX = false;
                                 finishedZ = false;
-                                drag_cache.mesh.children[2].rotateZ(-finalPosZ);
                                 drag_cache.mesh.children[2].rotateX(-finalPosX);
+                                drag_cache.mesh.children[2].rotateZ(-finalPosZ);
                         } else {
                             console.log('Wut')
                         }
