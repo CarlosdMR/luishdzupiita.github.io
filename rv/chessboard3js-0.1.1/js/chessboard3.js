@@ -2142,7 +2142,7 @@
                             drag_cache.mesh.children[2].rotateZ(tqr);
                         } else if (!finishedX && finishedZ) {
                             console.log('Rotating X')
-                            drag_cache.mesh.children[2].rotateX(tqr);
+                            drag_cache.mesh.children[2].rotateX(-tqr);
                         } else if (finishedX && finishedZ){
                             // Finished animation
                             console.log('Finished')
