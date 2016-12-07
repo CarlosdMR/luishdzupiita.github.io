@@ -1436,6 +1436,7 @@
                     delete PIECE_MESH_IDS[DRAG_INFO.source];
                 }
                 if (newPosition[DRAG_INFO.location]) {
+                    console.log('SE LA COMIO')
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
                 }
                 newPosition[DRAG_INFO.location] = DRAG_INFO.piece;
