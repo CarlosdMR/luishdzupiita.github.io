@@ -2146,7 +2146,7 @@
                             if (color=='w') {
                             drag_cache.mesh.children[2].rotateX(-tqr);
                             } else {
-                            drag_cache.mesh.children[2].rotateX(tqr);
+                            drag_cache.mesh.children[2].rotateX(-tqr);
                             }
                         } else if (finishedX && finishedZ){
                             // Finished animation
