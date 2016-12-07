@@ -1452,7 +1452,7 @@
                 if (killFlag) {
                     if (window.TWEEN !== undefined && typeof TWEEN === 'object') {
                         console.log('Inside kill animation');
-                        var tweenArm = new TWEEN.e({t: 0})
+                        var tweenArm = new TWEEN.Tween({t: 0})
                             .to({t: Math.PI/4}, 1600)
                             .onUpdate(function() {
                                 var t = this.t;
