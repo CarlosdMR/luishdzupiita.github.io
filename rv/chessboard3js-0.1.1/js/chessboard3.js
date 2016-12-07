@@ -12,6 +12,7 @@
  var mat1 = false;
  var dragUpdate = 0;
  var drag_cache;
+ var killFlag=false;
 ;(function() {
     'use strict';
 
@@ -1436,7 +1437,7 @@
                     delete newPosition[DRAG_INFO.source];
                     delete PIECE_MESH_IDS[DRAG_INFO.source];
                 }
-                var killFlag = false;
+
                 if (newPosition[DRAG_INFO.location]) {
 
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
