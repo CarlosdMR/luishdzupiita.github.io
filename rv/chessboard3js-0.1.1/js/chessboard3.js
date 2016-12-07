@@ -1437,17 +1437,19 @@
                 }
                 if (newPosition[DRAG_INFO.location]) {
 
-                    DRAG_INFO.mesh.children[2].rotateZ(Math.PI/8);
-                    RENDERER.render(SCENE,CAMERA);
-                    setTimeout(function(){}, 1000);
 
-                    DRAG_INFO.mesh.children[2].rotateZ(-Math.PI);
-                    RENDERER.render(SCENE,CAMERA);
-                    setTimeout(function(){}, 1000);
 
-                    DRAG_INFO.mesh.children[2].rotateZ(0);
-                    RENDERER.render(SCENE,CAMERA);
-                    setTimeout(function(){}, 1000);
+                    var tweenArm = new TWEEN.Tween({t: 0})
+                        .to({t: Math.PI/4}, 1600)
+                        //.easing(TWEEN.Easing.Elastic.InOut)
+                        .onUpdate(function() {
+                            var t = this.t;
+                            DRAG_INFO.mesh.children[2].rotateZ(t);
+                        })
+                        .onComplete(function() {
+                            DRAG_INFO.mesh.children[2].rotateZ(0);
+                        });
+                    tweenArm.start();
 
                     SCENE.remove(SCENE.getObjectById(PIECE_MESH_IDS[DRAG_INFO.location]));
                 }
