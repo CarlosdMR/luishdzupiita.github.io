@@ -2123,7 +2123,7 @@
                 var finalPosX = Math.PI*1.95;
                 if (killFlag) {
                         tqr = Math.PI/40;
-                        if (drag_cache.mesh.children[2].rotation.z >= finalPosZ) {
+                        if (drag_cache.mesh.children[2].rotation.z >= finalPosZ && drag_cache.mesh.children[2].rotation.x < finalPosX) {
                             drag_cache.mesh.children[2].rotateX(tqr);
                         } else {
                         drag_cache.mesh.children[2].rotateZ(tqr);
