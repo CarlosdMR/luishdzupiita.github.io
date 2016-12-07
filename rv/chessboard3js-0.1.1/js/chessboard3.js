@@ -2125,7 +2125,7 @@
                 if (killFlag) {
                         console.log('Inside kill animation');
                         tqr += Math.PI/32;
-                        drag_cache.mesh.children[0].rotateZ(tqr);
+                        drag_cache.mesh.children[2].rotateZ(tqr);
                         console.log(tqr)
                         if (tqr >= finalPos) { // Finished animation
                             killFlag = false;
