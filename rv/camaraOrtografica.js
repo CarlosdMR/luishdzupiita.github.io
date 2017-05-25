@@ -8,7 +8,7 @@ camara.near = 0.1;
 camara.far = 1000;
 camara.updateProjectionMatrix();
 
-camara.position.z = 100;
+camara.position.z = 500;
 
 var cubo = new THREE.Mesh(new THREE.BoxGeometry(30,30,30),new THREE.MeshNormalMaterial());
 cubo.rotateY(Math.PI/4);
