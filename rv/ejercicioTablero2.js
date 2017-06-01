@@ -1,4 +1,4 @@
-var colorGris = new THREE.Color("rgb(30, 30, 30)");
+var colorGris = new THREE.Color("rgb(20, 20, 20)");
 var materialGris =new THREE.MeshLambertMaterial({color: colorGris});
 //materialGris.color = colorGris;
 var colorBlanco = new THREE.Color("rgb(255, 255, 255)");
@@ -53,7 +53,7 @@ escena.add(cuadros[i]);
 }
 
 //Lados o bordes del tablero
-var colorBorde = new THREE.Color("rgb(200, 130, 60)");
+var colorBorde = new THREE.Color("rgb(51, 10, 10)");
 var materialBorde = new THREE.MeshLambertMaterial({color: colorBorde});
 
 var geometryLado1 = new THREE.BoxGeometry( 10, 100, 10 );
